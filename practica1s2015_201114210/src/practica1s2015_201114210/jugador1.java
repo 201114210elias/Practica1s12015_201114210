@@ -6,13 +6,16 @@
 
 package practica1s2015_201114210;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Danyela Elias
  */
 public class jugador1 extends javax.swing.JFrame {
-
+ Lista lista = new Lista();
+  public Nodo actual;
     /**
      * Creates new form jugador1
      */
@@ -110,7 +113,8 @@ public class jugador1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+  
+         
         a = jTextField1.getText();
         b=  Integer.parseInt(jTextField2.getText());
         this.dispose();

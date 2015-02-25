@@ -8,15 +8,20 @@ package practica1s2015_201114210;
 
  */
 public class Nodo {
-    String nombre;
+    String nombre, nom;
 
     Nodo siguiente;
     Nodo anterior;
+    Nodo arriba;
+    Nodo abajo;
     
-    public Nodo(String nombre){
+    public Nodo(String nombre ){
+        
         this.nombre = nombre;
-
+        
         this.anterior = null;
         this.siguiente = null;
+        this.arriba = null;
+        this.abajo = null;
     }
 }
