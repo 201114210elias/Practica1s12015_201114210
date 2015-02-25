@@ -26,8 +26,8 @@ public class inicio extends javax.swing.JFrame {
         initComponents();
         jLabel3.setText(jugador1.a);
         jLabel4.setText(jugador2.c);
-            jButton4.setVisible(false);
-        jButton5.setVisible(false);
+            jButton4.setVisible(true);
+        
         ////////////////////////////////////////
                     
        
@@ -61,7 +61,6 @@ public class inicio extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         jButton6.setText("jButton6");
 
@@ -122,13 +121,6 @@ public class inicio extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Lado");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,9 +149,7 @@ public class inicio extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton7)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jButton4))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1))
@@ -182,16 +172,11 @@ public class inicio extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jLabel3)
                     .addComponent(jButton4))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel4)
-                            .addComponent(jButton7)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5)))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel4)
+                    .addComponent(jButton7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -246,10 +231,14 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+
         lista.ingreso(jButton1.getText());
         String tem;
         tem = jLabel4.getText();
-        lista.ingreso_jugador(jLabel3.getText());
+           String hola;
+        hola = jLabel3.getText();
+        
+        lista.ingreso_jugador(hola);
         
     if (!" ".equals(tem) ){
         lista.ingreso(jButton2.getText());
@@ -258,10 +247,6 @@ public class inicio extends javax.swing.JFrame {
         jLabel6.setText( actual.nombre);
             }
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,7 +288,6 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;

@@ -9,15 +9,22 @@ package practica1s2015_201114210;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class plantas extends javax.swing.JFrame {
-public static String comparar ;
+     Lista_personajes listados = new Lista_personajes();
+     int contador = 0;
+     public NodoPlay actual2;
+     public static String comparar ;
     /**
      * Creates new form plantas
      */
     public plantas() {
         initComponents();
         jTextField1.setVisible(false);
+        jButton4.setVisible(true);
+        jButton5.setVisible(true);
+        jLabel7.setVisible(true);  
     }
     
    public void LlenarImagen(String path) { 
@@ -25,6 +32,7 @@ public static String comparar ;
         Icon icono = new ImageIcon(fot.getImage().getScaledInstance(jLabel6.getWidth(), jLabel6.getHeight(), java.awt.Image.SCALE_DEFAULT));
         jLabel6.setIcon(icono); jLabel6.repaint(); 
     }
+   
    /** 
     * 
     * 
@@ -54,6 +62,9 @@ private DefaultListModel modelList(String a){
         jList2 = new javax.swing.JList();
         jTextField1 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,10 +105,32 @@ private DefaultListModel modelList(String a){
         jList2.setModel(model);
         jScrollPane2.setViewportView(jList2);
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("jLabel7");
+
+        jButton5.setText("jButton4");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
             }
         });
 
@@ -122,13 +155,19 @@ private DefaultListModel modelList(String a){
                 .addComponent(jLabel1)
                 .addGap(249, 249, 249))
             .addGroup(layout.createSequentialGroup()
-                .addGap(266, 266, 266)
+                .addGap(84, 84, 84)
+                .addComponent(jButton4)
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addGap(18, 18, 18)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -144,21 +183,32 @@ private DefaultListModel modelList(String a){
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(71, 71, 71)
+                                .addComponent(jLabel7))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton4)
+                            .addComponent(jButton5))
+                        .addGap(25, 25, 25)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -180,32 +230,66 @@ private DefaultListModel modelList(String a){
         
         String url = (String) jComboBox1.getSelectedItem();
         
-        
+        actual2 = listados.ultimo2;       
+  
         jTextField1.setText(url);
-        model.addElement(jTextField1.getText());
         jList2.setSelectedIndex(0);
         
         //Repollo, Apio asesino, Planta Protectora, Elote Loco
             if (url == "Repollo")
             {
-                String direccion;
+                
+                String puntos11, ataque11;
+                puntos11= "10";
+                ataque11="10";
+                model.addElement(url+"         " + puntos11 +"         "+ ataque11);
+                
+                String direccion;   
                 direccion= "C:\\Users\\Danyela Elias\\Desktop\\Jr\\Estructuras2015\\Nueva Carpeta\\Practica1s12015_201114210\\practica1s2015_201114210\\img\\p1.jpg";
               LlenarImagen(direccion);
+              
+                    
+                 listados.ingresar(url,puntos11,ataque11);
             }
             else if(url=="Apio asesino")
-            {String direccion;
+            {
+                String puntos, ataque;
+                puntos= "30";
+                ataque="2";
+                model.addElement(url+"          " + puntos +"        "+ ataque);
+                
+                String direccion;
                 direccion= "C:\\Users\\Danyela Elias\\Desktop\\Jr\\Estructuras2015\\Nueva Carpeta\\Practica1s12015_201114210\\practica1s2015_201114210\\img\\p2.jpg";
-              LlenarImagen(direccion);
+                LlenarImagen(direccion);
+                
+                 listados.ingresar(url,puntos,ataque);
             }
             else if(url=="Planta Protectora")
-            {String direccion;
+            {
+                String puntos, ataque;
+                puntos= "10";
+                ataque="1";
+                model.addElement(url+"         " + puntos +"        "+ ataque);
+                
+                String direccion;
                 direccion= "C:\\Users\\Danyela Elias\\Desktop\\Jr\\Estructuras2015\\Nueva Carpeta\\Practica1s12015_201114210\\practica1s2015_201114210\\img\\p3.jpg";
-              LlenarImagen(direccion);
+                LlenarImagen(direccion);
+                
+                 listados.ingresar(url,puntos,ataque);
             }
             else if(url=="Elote Loco")
-            {String direccion;
+            {   
+                String puntos, ataque;
+                puntos= "10";
+                ataque="1";
+                model.addElement(url+"           " + puntos +"          "+ ataque);
+                
+                String direccion;
                 direccion= "C:\\Users\\Danyela Elias\\Desktop\\Jr\\Estructuras2015\\Nueva Carpeta\\Practica1s12015_201114210\\practica1s2015_201114210\\img\\p4.jpg";
-              LlenarImagen(direccion);
+                LlenarImagen(direccion);
+                
+                 listados.ingresar(url,puntos, ataque);
+                 
             }
         
         
@@ -220,6 +304,21 @@ private DefaultListModel modelList(String a){
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+               
+        actual2 = listados.ImprimirNext(actual2, jLabel7);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+               
+        actual2 = listados.ImprimirAnterior(actual2, jLabel7);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,6 +359,8 @@ private DefaultListModel modelList(String a){
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -267,6 +368,7 @@ private DefaultListModel modelList(String a){
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     public javax.swing.JList jList2;
     private DefaultListModel model;
     private javax.swing.JScrollPane jScrollPane2;

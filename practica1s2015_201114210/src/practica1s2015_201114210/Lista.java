@@ -82,6 +82,7 @@ public class Lista {
            // System.out.println("" +nombre+nombre);
             cabeza=nuevo;
              System.out.println("jugador1");
+              System.out.println(nombre);
         }else{
         Nodo nuevo = new Nodo(nombre); 
         
