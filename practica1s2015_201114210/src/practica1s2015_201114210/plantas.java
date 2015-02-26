@@ -242,7 +242,7 @@ private DefaultListModel modelList(String a){
                 String puntos11, ataque11;
                 puntos11= "10";
                 ataque11="10";
-                model.addElement(url+"                        >> " + puntos11 +"                    >> "+ ataque11);
+                model.addElement(url+" "+"                              >> " + puntos11 +"                    >> "+ ataque11);
                 
                 String direccion;   
                 direccion= "C:\\Users\\Danyela Elias\\Desktop\\Jr\\Estructuras2015\\Nueva Carpeta\\Practica1s12015_201114210\\practica1s2015_201114210\\img\\p1.jpg";
@@ -256,7 +256,7 @@ private DefaultListModel modelList(String a){
                 String puntos, ataque;
                 puntos= "30";
                 ataque="2";
-                model.addElement(url+"                   >> " + puntos +"                    >> "+ ataque);
+                model.addElement(url+"                      >> " + puntos +"                    >> "+ ataque);
                 
                 String direccion;
                 direccion= "C:\\Users\\Danyela Elias\\Desktop\\Jr\\Estructuras2015\\Nueva Carpeta\\Practica1s12015_201114210\\practica1s2015_201114210\\img\\p2.jpg";
@@ -282,7 +282,7 @@ private DefaultListModel modelList(String a){
                 String puntos, ataque;
                 puntos= "10";
                 ataque="1";
-                model.addElement(url+"                     >> " + puntos +"                    >> "+ataque);
+                model.addElement(url+" "+"                          >> " + puntos +"                    >> "+ataque);
                 
                 String direccion;
                 direccion= "C:\\Users\\Danyela Elias\\Desktop\\Jr\\Estructuras2015\\Nueva Carpeta\\Practica1s12015_201114210\\practica1s2015_201114210\\img\\p4.jpg";

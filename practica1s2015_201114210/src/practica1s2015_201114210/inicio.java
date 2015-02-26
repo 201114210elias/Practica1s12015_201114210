@@ -26,7 +26,7 @@ public class inicio extends javax.swing.JFrame {
         initComponents();
         jLabel3.setText(jugador1.a);
         jLabel4.setText(jugador2.c);
-            jButton4.setVisible(true);
+            jButton4.setVisible(false);
         
         ////////////////////////////////////////
                     

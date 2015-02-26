@@ -224,7 +224,7 @@ public class zombis extends javax.swing.JFrame {
                         String puntos, ataque;
                         puntos= "15";
                         ataque="1";
-                        model.addElement(jTextField1.getText()+"      "+ puntos +"   " +ataque);
+                        model.addElement(jTextField1.getText()+"                  >> "+ puntos +"                    >> " +ataque);
                         listaz.ingresar(url,puntos,ataque);
               
             }
@@ -239,7 +239,7 @@ public class zombis extends javax.swing.JFrame {
                         String puntos, ataque;
                         puntos= "30";
                         ataque="2";
-                        model.addElement(jTextField1.getText()+"      "+ puntos +"   " +ataque);
+                        model.addElement(jTextField1.getText()+"                        >> "+ puntos +"                    >> " +ataque);
                         listaz.ingresar(url,puntos,ataque);
             }
             else if(url=="ZombiFut")
@@ -251,7 +251,7 @@ public class zombis extends javax.swing.JFrame {
                         String puntos, ataque;
                         puntos= "45";
                         ataque="1";
-                        model.addElement(jTextField1.getText()+"      "+ puntos +"   " +ataque);
+                        model.addElement(jTextField1.getText()+"                         >> "+ puntos +"                    >> "+ataque);
                         listaz.ingresar(url,puntos,ataque);                
             }
             else if(url=="ZombiToro")
@@ -263,7 +263,7 @@ public class zombis extends javax.swing.JFrame {
                         String puntos, ataque;
                         puntos= "10";
                         ataque="3";
-                        model.addElement(jTextField1.getText()+"      "+ puntos +"   " +ataque);
+                        model.addElement(jTextField1.getText()+"                        >> "+ puntos +"                    >> "+ataque);
                         listaz.ingresar(url,puntos,ataque);               
             }
     }//GEN-LAST:event_jButton4ActionPerformed
