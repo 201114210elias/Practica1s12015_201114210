@@ -1,21 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package practica1s2015_201114210;
 
 import javax.swing.JLabel;
 
-/**
- *
 
- */
-public class Lista {
-   
-    Nodo ultimo;
-    Nodo cabeza;
+public class matriz_campo {
     
-    public Lista(){
+    nodo_matriz ultimo;
+    nodo_matriz cabeza;
+    
+    public matriz_campo(){
         
         ultimo = null;
         cabeza = null;
@@ -31,20 +25,20 @@ public class Lista {
     
     
     
-        public Lista ingreso(String cabeza){
+        public matriz_campo ingreso(String cabeza){
         
         
         if(Estavacio()){
-             Nodo nuevo = new Nodo(cabeza);
+             nodo_matriz nuevo = new nodo_matriz(cabeza);
             ultimo = nuevo;
             nuevo.arriba = null;
             nuevo.siguiente = null;
             nuevo.anterior = null;
             nuevo.abajo = nuevo;
-                        System.out.println("cabecera 1");
+             System.out.println("cabecera 1");
 
         }else{
-        Nodo nuevo = new Nodo(cabeza); 
+        nodo_matriz nuevo = new nodo_matriz(cabeza); 
         
             ultimo.siguiente = null;
             ultimo.abajo = nuevo;
@@ -69,11 +63,11 @@ public class Lista {
     /////////////////////////////////
     /////////////////////////////////
     /////////////////////////////////
-    public Lista ingreso_jugador(String nombre){
+    public matriz_campo ingreso_fila(String nombre){
         
         
         if(Estavacio()){
-             Nodo nuevo = new Nodo(nombre);
+             nodo_matriz nuevo = new nodo_matriz(nombre);
             ultimo.siguiente = nuevo;
             nuevo.arriba = null;
             nuevo.siguiente = nuevo;
@@ -84,7 +78,7 @@ public class Lista {
              System.out.println("jugador1");
               System.out.println(nombre);
         }else{
-        Nodo nuevo = new Nodo(nombre); 
+        nodo_matriz nuevo = new nodo_matriz(nombre); 
         
             ultimo.siguiente = nuevo;
             ultimo.abajo = null;
@@ -110,12 +104,11 @@ public class Lista {
        
     
     
-    public Nodo ImprimirSiguiente(Nodo Actual, JLabel mostrar){
+    public nodo_matriz ImprimirSiguiente(nodo_matriz Actual, JLabel mostrar){
         mostrar.setText(null);
-        Nodo actual = Actual;
+        nodo_matriz actual = Actual;
         actual = actual.abajo;
         mostrar.setText( actual.nombre);
         return actual;
     }
-  
 }

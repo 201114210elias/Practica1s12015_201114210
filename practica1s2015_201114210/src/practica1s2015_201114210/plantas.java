@@ -33,17 +33,7 @@ public class plantas extends javax.swing.JFrame {
         jLabel6.setIcon(icono); jLabel6.repaint(); 
     }
    
-   /** 
-    * 
-    * 
-private DefaultListModel modelList(String a){
-   DefaultListModel<String> model = new DefaultListModel<>();
-   String tem;
-    model.addElement(a+1);
-
-   return model;
-}
-*/
+ 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -250,6 +240,7 @@ private DefaultListModel modelList(String a){
               
                     
                  listados.ingresar(url,puntos11,ataque11);
+                 
             }
             else if(url=="Apio asesino")
             {

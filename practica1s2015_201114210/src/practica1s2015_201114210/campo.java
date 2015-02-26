@@ -15,27 +15,21 @@ import javax.swing.JLabel;
  */
 public class campo extends javax.swing.JFrame {
     public JLabel[][] matrix;
+    
+    
+         matriz_campo lista = new matriz_campo();
+         int contador = 0;
+         public nodo_matriz actual22;
     /**
      * Creates new form campo
      */
     public campo() {
         initComponents();
+        
          jLabel4.setText(jugador1.a);
          jLabel5.setText(jugador2.c);
-        
-          matrix = new JLabel [inicio.campo][inicio.campo];
-            for(int i=0; i< inicio.campo; i++){
-				for(int j=0; j< inicio.campo; j++){
-					
-                                        matrix[i][j] = new JLabel();
-                                        matrix[i][j].setVisible(true);
-                                        matrix[i][j].setBorder(javax.swing.BorderFactory.createLineBorder(Color.black, 1));
-                                        matrix[i][j].setBounds(200 +(i*43), 50+(j*43), 40, 40);
-                                        matrix[i][j].setBackground(Color.gray);
-                                        matrix[i][j].setText("X");
-                                        this.getContentPane().add(matrix[i][j]);
-                                     }   
-}
+         
+    
     }
 
     /**
@@ -54,6 +48,8 @@ public class campo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,6 +92,15 @@ public class campo extends javax.swing.JFrame {
 
         jLabel5.setText("jLabel5");
 
+        jLabel6.setText("jLabel6");
+
+        jButton1.setText("Iniciar Juego");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,13 +108,22 @@ public class campo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
-                        .addGap(46, 46, 46)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 872, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 918, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addGap(363, 363, 363)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -133,8 +147,16 @@ public class campo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1)
+                                .addGap(53, 53, 53))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -146,6 +168,31 @@ public class campo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+   
+        actual22 = lista.ultimo;
+        matrix = new JLabel [inicio.campo][inicio.campo];
+            for(int i=0; i< inicio.campo; i++){
+				for(int j=0; j< inicio.campo; j++){
+					
+                                        matrix[i][j] = new JLabel();
+                                        matrix[i][j].setVisible(true);
+                                        matrix[i][j].setBorder(javax.swing.BorderFactory.createLineBorder(Color.black, 1));
+                                        matrix[i][j].setBounds(200 +(i*43), 50+(j*43), 40, 40);
+                                        matrix[i][j].setBackground(Color.GREEN);
+                                        matrix[i][j].setText("X");
+                                         lista.ingreso("X");
+                                         
+                                         actual22 = lista.ImprimirSiguiente(actual22, jLabel6);   
+                                         System.out.println(actual22);
+
+                                         
+                                        this.getContentPane().add(matrix[i][j]);
+                                     }   
+}        
+            
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,11 +230,13 @@ public class campo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
